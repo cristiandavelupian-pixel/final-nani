@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        :root {
+          --gb-bg-top: #0b1a0b;
+          --gb-bg-screen: #031006;
+          --gb-green: #9ef08f;
+          --gb-border: #3eff1f;
+        }
+
+        body {
+          background: radial-gradient(circle at 20% 10%, #07220b 0%, #001100 35%, #000000 100%);
+          color: var(--gb-green);
+          font-family: 'Press Start 2P', 'Courier New', monospace;
+          min-height: 100vh;
+          -webkit-font-smoothing: none;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        .gameboy-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        @media (min-width: 768px) {
+          .gameboy-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .gameboy {
+          background: linear-gradient(180deg, var(--gb-bg-top), #02110a);
+          border: 4px solid var(--gb-border);
+          border-radius: 12px;
+          padding: 12px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.7), inset 0 0 30px rgba(0,80,0,0.05);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .gameboy-bottom { margin-top: 0.5rem; }
+
+        .gameboy-screen {
+          background: var(--gb-bg-screen);
+          padding: 12px;
+          border-radius: 6px;
+          min-height: 140px;
+        }
+
+        .screen-content { font-size: 12px; line-height: 1.4; }
+
+        .gameboy-controls {
+          margin-top: 10px;
+          color: var(--gb-green);
+          text-align: right;
+          font-size: 10px;
+          opacity: 0.95;
+        }
+
+        .drop-shadow-neon {
+          color: var(--gb-green);
+          text-shadow: 0 0 6px rgba(150,255,150,0.9);
+        }
+
+        .gameboy-screen input,
+        .gameboy-screen select,
+        .gameboy-screen textarea {
+          background: #021106;
+          border: 2px solid #39ff1f;
+          color: #dfffcf;
+          padding: 0.5rem;
+          border-radius: 4px;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .gameboy-screen button,
+        .gameboy-screen .btn {
+          background: linear-gradient(180deg, #0a2b0a, #063506);
+          color: #eaffd6;
+          border: 2px solid #3eff1f;
+          padding: 0.6rem 1rem;
+          border-radius: 6px;
+        }
+
+        body::before{
+          content: "";
+          position: fixed;
+          left:0; right:0; top:0; bottom:0;
+          pointer-events:none;
+          background-image: linear-gradient(transparent 60%, rgba(0,0,0,0.08) 61%);
+          background-size: 100% 4px;
+          mix-blend-mode: overlay;
+          opacity:0.55;
+        }
+
+        .text-center { text-align: center; }
+        .text-red-300 { color: #ff9b9b; }
